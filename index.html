@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ألعاب اليوم الوطني العُماني</title>
+<title>ألعاب اليوم الوطني العُماني · Oman National Day Games</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,24 @@ img.ph{display:block;object-fit:cover;background:var(--line)}
 svg.flag{display:block;height:auto}
 #app{min-height:100%;display:flex;flex-direction:column;position:relative;z-index:1}
 .wm{position:fixed;inset:0;z-index:0;pointer-events:none;background:url(img/osam-logo.png) center 60%/min(72vh,80vw) no-repeat;opacity:.1}
+/* English translation lines */
+.en{display:block;font-family:var(--f-body);font-weight:600;font-size:max(.6em,14px);line-height:1.3;margin-top:.12em;opacity:.72;letter-spacing:.01em;text-wrap:balance}
+.eni{font-family:var(--f-body);font-weight:600;font-size:max(.68em,13px);opacity:.8;white-space:nowrap}
+.arx{display:block}
+.eyebrow{font-family:var(--f-display);font-weight:800;color:var(--red);font-size:clamp(22px,2.2vw,36px)}
+.q-text.clue{font-size:clamp(24px,2.6vw,44px);max-width:34ch}
+.mcard .b{flex-direction:column;line-height:1}
+.bnum{font-family:var(--f-body);font-size:.32em;opacity:.8;margin-top:.15em}
+.place span{display:block;padding-inline:8px}
+.tile b .en{font-size:max(.7em,14px)}
+.prog .en,.prog .eni{display:inline;margin-inline-start:.5em}
+.brand .en{font-size:13px}
+.en{width:fit-content;max-width:100%}
+.stage .en,.hero .en,.mbox .en,.age .en,.tip .en,.bteam .en,.mcard .en,.place .en{margin-inline:auto}
+.steptxt .en,.choices.four .en,.mi:not(.desc) .en{margin-inline:0}
+.mcard .f.word{flex-direction:column}
+.top{flex-wrap:nowrap}
+@media (max-width:1100px){.top{flex-wrap:wrap}}
 
 /* header */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);padding-block:10px 14px;
@@ -153,7 +171,7 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.2
 .mcard{aspect-ratio:var(--ar,1);perspective:900px;border:0;padding:0;background:none;cursor:pointer}
 .mcard .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
 .mcard.open .in,.mcard.done .in{transform:rotateY(180deg)}
-.mcard .f,.mcard .b{position:absolute;inset:0;border-radius:20px;display:grid;place-items:center;backface-visibility:hidden;overflow:hidden}
+.mcard .f,.mcard .b{position:absolute;inset:0;border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;backface-visibility:hidden;overflow:hidden}
 .mcard .b{background:var(--red);border:5px solid var(--card);box-shadow:0 0 0 3px var(--red),0 6px 0 3px var(--red-d);color:#fff;font-family:var(--f-display);font-weight:800;font-size:clamp(40px,5.5vw,92px);font-variant-numeric:tabular-nums;
   background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.08) 0 10px,transparent 10px 20px)}
 .mcard:nth-child(even) .b{background-color:var(--green);box-shadow:0 0 0 3px var(--green),0 6px 0 3px var(--green-d)}
@@ -254,16 +272,16 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.2
 <div class="wm" aria-hidden="true"></div>
 <div id="app">
   <header class="top">
-    <button class="brand" id="brand" aria-label="العودة إلى البداية"><span id="brandFlag"></span><span>اليوم الوطني لسلطنة عُمان</span></button>
+    <button class="brand" id="brand" aria-label="العودة إلى البداية / Back to start"><span id="brandFlag"></span><span style="text-align:start">اليوم الوطني لسلطنة عُمان<span class="en" lang="en" dir="ltr">Oman National Day</span></span></button>
     <button class="chip" id="ageChip" hidden></button>
     <span class="spacer"></span>
     <div class="scores" aria-label="نقاط الفرق">
-      <div class="team r"><span class="nm">الفريق الأحمر</span><button data-t="r" data-d="-1" aria-label="ناقص نقطة للأحمر">−</button><span class="pts" id="ptsR">٠</span><button data-t="r" data-d="1" aria-label="زائد نقطة للأحمر">+</button></div>
-      <div class="team g"><span class="nm">الفريق الأخضر</span><button data-t="g" data-d="-1" aria-label="ناقص نقطة للأخضر">−</button><span class="pts" id="ptsG">٠</span><button data-t="g" data-d="1" aria-label="زائد نقطة للأخضر">+</button></div>
+      <div class="team r"><span class="nm">الفريق الأحمر <span class="eni" lang="en">Red</span></span><button data-t="r" data-d="-1" aria-label="ناقص نقطة للأحمر">−</button><span class="pts" id="ptsR">٠</span><button data-t="r" data-d="1" aria-label="زائد نقطة للأحمر">+</button></div>
+      <div class="team g"><span class="nm">الفريق الأخضر <span class="eni" lang="en">Green</span></span><button data-t="g" data-d="-1" aria-label="ناقص نقطة للأخضر">−</button><span class="pts" id="ptsG">٠</span><button data-t="g" data-d="1" aria-label="زائد نقطة للأخضر">+</button></div>
     </div>
     <div class="tools">
-      <button class="icon-btn" id="snd" title="الصوت" aria-label="تشغيل أو كتم الصوت"><span class="em">🔊</span></button>
-      <button class="icon-btn" id="fs" title="ملء الشاشة" aria-label="ملء الشاشة"><span class="em">⛶</span></button>
+      <button class="icon-btn" id="snd" title="الصوت / Sound" aria-label="تشغيل أو كتم الصوت / Sound on or off"><span class="em">🔊</span></button>
+      <button class="icon-btn" id="fs" title="ملء الشاشة / Full screen" aria-label="ملء الشاشة / Full screen"><span class="em">⛶</span></button>
     </div>
   </header>
   <main id="main"></main>
@@ -276,6 +294,10 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const h=html=>{const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstElementChild};
 const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const ar=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+/* bilingual helpers: Arabic first, English underneath (block) or beside (inline) */
+const en=t=>`<span class="en" lang="en" dir="ltr">${t}</span>`;
+const bi=x=>Array.isArray(x)?`<span class="arx">${x[0]}</span>${en(x[1])}`:x;
+const bil=(a,e)=>`${a} <span class="eni" lang="en" dir="ltr">${e}</span>`;
 const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const S={age:null,scores:store.get('omd-scores',{r:0,g:0}),muted:store.get('omd-muted',false),key:null};
 let timers=[];
@@ -314,10 +336,9 @@ function loop(){
 }
 
 /* ---------- art ---------- */
-/* Flag of Oman, official geometry (1050×600, hoist band = one third) with the national emblem. */
 function flag(o={}){
   const s=Object.assign({band:1,mid:1,green:1,emblem:1,outline:0},o);
-  return `<svg class="flag" viewBox="0 0 1050 600" role="img" aria-label="علم سلطنة عُمان">
+  return `<svg class="flag" viewBox="0 0 1050 600" role="img" aria-label="علم سلطنة عُمان / Flag of Oman">
   <rect x="0" y="0" width="1050" height="600" fill="#FFFFFF"/>
   ${s.mid?'<rect x="350" y="200" width="700" height="200" fill="#DF1A23"/>':''}
   ${s.green?'<rect x="350" y="400" width="700" height="200" fill="#007E3C"/>':''}
@@ -326,209 +347,227 @@ function flag(o={}){
   <rect x="3" y="3" width="1044" height="594" fill="none" stroke="${s.outline?'#2B1B14':'#E3D7CB'}" stroke-width="${s.outline?8:5}" ${s.outline?'stroke-dasharray="26 18"':''}/>
   </svg>`;
 }
-const JAPAN=`<svg class="flag" viewBox="0 0 900 600" role="img" aria-label="علم اليابان"><rect width="900" height="600" fill="#FFFFFF"/><circle cx="450" cy="300" r="180" fill="#BC002D"/></svg>`;
+const JAPAN=`<svg class="flag" viewBox="0 0 900 600" role="img" aria-label="علم اليابان / Flag of Japan"><rect width="900" height="600" fill="#FFFFFF"/><circle cx="450" cy="300" r="180" fill="#BC002D"/></svg>`;
 const ph=(k,alt='')=>`<img class="ph" src="img/${k}.jpg" alt="${alt}" loading="lazy" draggable="false">`;
 const art=(k,alt)=>k==='FLAG'?flag():k==='JAPAN'?JAPAN:ph(k,alt);
 const box=(k,alt)=>k==='FLAG'||k==='JAPAN'?`<div class="flagbox">${art(k)}</div>`:ph(k,alt);
 
+/* ---------- UI words ---------- */
+const W={
+  menu:bil('→ القائمة','Menu'),
+  next:bil('التالي ←','Next'),
+  prev:bil('→ السابق','Back'),
+  again:bil('من جديد','Play again'),
+  answer:bil('الإجابة','Answer'),
+  showAns:bil('أظهروا الإجابة','Show answer'),
+  more:bil('أظهروا أكثر 🔍','Show more'),
+  close:bil('رجوع','Close'),
+  well:['أحسنتم! 🎉','Well done!'],
+  great:['ممتاز! 🎉','Excellent!'],
+  timeUp:['انتهى الوقت!',"Time's up!"]
+};
+
 /* ---------- data ---------- */
 const QUIZ_S=[
- {q:'أين علم عُمان؟',c:[{t:'علم عُمان',p:'FLAG'},{t:'علم اليابان',p:'JAPAN'}]},
- {q:'أي حيوان يعيش في الصحراء؟',c:[{t:'الجمل',p:'camel'},{t:'البطريق',p:'penguin'}]},
- {q:'أين النخلة؟',c:[{t:'النخلة',p:'palm'},{t:'الصبّار',p:'cactus'}]},
- {q:'أين تعيش السلحفاة البحرية؟',c:[{t:'في البحر',p:'sea'},{t:'في الثلج',p:'snow'}]},
- {q:'بماذا يُبحر البحّار؟',c:[{t:'السفينة',p:'dhow'},{t:'الدرّاجة',p:'bicycle'}]},
- {q:'أين القلعة؟',c:[{t:'القلعة',p:'fort'},{t:'الخيمة',p:'tent'}]},
- {q:'أين الخنجر العُماني؟',c:[{t:'الخنجر',p:'khanjar'},{t:'الملاعق',p:'spoon'}]},
- {q:'بماذا نصبّ القهوة للضيف؟',c:[{t:'الدلّة',p:'coffee'},{t:'البيتزا',p:'pizza'}]}
+ {q:['أين علم عُمان؟',"Where is Oman's flag?"],c:[{t:['علم عُمان',"Oman's flag"],p:'FLAG'},{t:['علم اليابان',"Japan's flag"],p:'JAPAN'}]},
+ {q:['أي حيوان يعيش في الصحراء؟','Which animal lives in the desert?'],c:[{t:['الجمل','Camel'],p:'camel'},{t:['البطريق','Penguin'],p:'penguin'}]},
+ {q:['أين النخلة؟','Where is the palm tree?'],c:[{t:['النخلة','Palm tree'],p:'palm'},{t:['الصبّار','Cactus'],p:'cactus'}]},
+ {q:['أين تعيش السلحفاة البحرية؟','Where does the sea turtle live?'],c:[{t:['في البحر','In the sea'],p:'sea'},{t:['في الثلج','In the snow'],p:'snow'}]},
+ {q:['بماذا يُبحر البحّار؟','What does the sailor sail in?'],c:[{t:['السفينة','A ship'],p:'dhow'},{t:['الدرّاجة','A bicycle'],p:'bicycle'}]},
+ {q:['أين القلعة؟','Where is the fort?'],c:[{t:['القلعة','Fort'],p:'fort'},{t:['الخيمة','Tent'],p:'tent'}]},
+ {q:['أين الخنجر العُماني؟','Where is the Omani khanjar?'],c:[{t:['الخنجر','Khanjar'],p:'khanjar'},{t:['الملاعق','Spoons'],p:'spoon'}]},
+ {q:['بماذا نصبّ القهوة للضيف؟','What do we pour coffee from for guests?'],c:[{t:['الدلّة','Dallah'],p:'coffee'},{t:['البيتزا','Pizza'],p:'pizza'}]}
 ];
 const QUIZ_B=[
- {p:'muscat',q:'ما عاصمة سلطنة عُمان؟',c:['مسقط','صلالة','نزوى','صحار'],f:'مسقط هي العاصمة، وفيها جامع السلطان قابوس الأكبر وسوق مطرح.'},
- {p:'rial',q:'ما عملة سلطنة عُمان؟',c:['الريال العُماني','الدينار','الدرهم','الجنيه']},
- {p:'mountain',q:'ما أعلى جبل في عُمان؟',c:['جبل شمس','الجبل الأخضر','جبل سمحان','جبل حفيت'],f:'جبل شمس في محافظة الداخلية، وهو أعلى قمة في عُمان.'},
- {p:'salalah',q:'أي مدينة تشتهر بموسم الخريف وأشجار اللبان؟',c:['صلالة','صور','عبري','البريمي'],f:'صلالة مركز محافظة ظفار، ويأتيها الضباب والرذاذ في الصيف.'},
- {p:'dhowyard',q:'أي مدينة تشتهر بصناعة السفن الخشبية؟',c:['صور','نزوى','عبري','أدم']},
- {p:'turtle',q:'أين تأتي السلاحف لتضع بيضها؟',c:['رأس الجنز','جبل شمس','نزوى','البريمي'],f:'محمية رأس الجنز في محافظة جنوب الشرقية.'},
- {p:'map',q:'كم عدد محافظات سلطنة عُمان؟',c:['١١','٧','٩','١٣']},
- {p:'fort',q:'في أي محافظة تقع قلعة نزوى؟',c:['الداخلية','ظفار','مسندم','الوسطى']},
- {p:'musandam',q:'أي محافظة تشتهر بالأخوار والدلافين؟',c:['مسندم','الظاهرة','البريمي','الداخلية']},
- {p:'oryx',q:'ما اسم هذا الحيوان النادر الذي تحميه محمية في الوسطى؟',c:['المها العربي','الغزال','الوعل','الجمل']},
- {p:'rose',q:'ماذا يُصنع من ورد الجبل الأخضر؟',c:['ماء الورد','العسل','الخبز','الحلوى']},
- {p:'FLAG',q:'ما ألوان علم عُمان؟',c:['الأحمر والأبيض والأخضر','الأزرق والأبيض','الأسود والأصفر','الأحمر والأزرق']}
+ {p:'muscat',q:['ما عاصمة سلطنة عُمان؟','What is the capital of Oman?'],c:[['مسقط','Muscat'],['صلالة','Salalah'],['نزوى','Nizwa'],['صحار','Sohar']],f:['مسقط هي العاصمة، وفيها جامع السلطان قابوس الأكبر وسوق مطرح.','Muscat is the capital, home to the Sultan Qaboos Grand Mosque and Muttrah Souq.']},
+ {p:'rial',q:['ما عملة سلطنة عُمان؟',"What is Oman's currency?"],c:[['الريال العُماني','Omani rial'],['الدينار','Dinar'],['الدرهم','Dirham'],['الجنيه','Pound']]},
+ {p:'mountain',q:['ما أعلى جبل في عُمان؟','What is the highest mountain in Oman?'],c:[['جبل شمس','Jebel Shams'],['الجبل الأخضر','Jebel Akhdar'],['جبل سمحان','Jebel Samhan'],['جبل حفيت','Jebel Hafeet']],f:['جبل شمس في محافظة الداخلية، وهو أعلى قمة في عُمان.',"Jebel Shams, in Ad Dakhiliyah, is Oman's highest peak."]},
+ {p:'salalah',q:['أي مدينة تشتهر بموسم الخريف وأشجار اللبان؟','Which city is famous for the khareef season and frankincense trees?'],c:[['صلالة','Salalah'],['صور','Sur'],['عبري','Ibri'],['البريمي','Al Buraimi']],f:['صلالة مركز محافظة ظفار، ويأتيها الضباب والرذاذ في الصيف.','Salalah is the centre of Dhofar; fog and drizzle arrive there in summer.']},
+ {p:'dhowyard',q:['أي مدينة تشتهر بصناعة السفن الخشبية؟','Which city is famous for building wooden ships?'],c:[['صور','Sur'],['نزوى','Nizwa'],['عبري','Ibri'],['أدم','Adam']]},
+ {p:'turtle',q:['أين تأتي السلاحف لتضع بيضها؟','Where do turtles come to lay their eggs?'],c:[['رأس الجنز','Ras al Jinz'],['جبل شمس','Jebel Shams'],['نزوى','Nizwa'],['البريمي','Al Buraimi']],f:['محمية رأس الجنز في محافظة جنوب الشرقية.','The Ras al Jinz reserve is in South Ash Sharqiyah.']},
+ {p:'map',q:['كم عدد محافظات سلطنة عُمان؟','How many governorates does Oman have?'],c:[['١١','11'],['٧','7'],['٩','9'],['١٣','13']]},
+ {p:'fort',q:['في أي محافظة تقع قلعة نزوى؟','Which governorate is Nizwa Fort in?'],c:[['الداخلية','Ad Dakhiliyah'],['ظفار','Dhofar'],['مسندم','Musandam'],['الوسطى','Al Wusta']]},
+ {p:'musandam',q:['أي محافظة تشتهر بالأخوار والدلافين؟','Which governorate is famous for its khors and dolphins?'],c:[['مسندم','Musandam'],['الظاهرة','Ad Dhahirah'],['البريمي','Al Buraimi'],['الداخلية','Ad Dakhiliyah']]},
+ {p:'oryx',q:['ما اسم هذا الحيوان النادر الذي تحميه محمية في الوسطى؟','What is this rare animal protected in a reserve in Al Wusta?'],c:[['المها العربي','Arabian oryx'],['الغزال','Gazelle'],['الوعل','Ibex'],['الجمل','Camel']]},
+ {p:'rose',q:['ماذا يُصنع من ورد الجبل الأخضر؟','What is made from the roses of Jebel Akhdar?'],c:[['ماء الورد','Rose water'],['العسل','Honey'],['الخبز','Bread'],['الحلوى','Halwa']]},
+ {p:'FLAG',q:['ما ألوان علم عُمان؟',"What are the colours of Oman's flag?"],c:[['الأحمر والأبيض والأخضر','Red, white and green'],['الأزرق والأبيض','Blue and white'],['الأسود والأصفر','Black and yellow'],['الأحمر والأزرق','Red and blue']]}
 ];
 const ZOOM={
- s:[{a:'camel',n:'جمل'},{a:'palm',n:'نخلة'},{a:'dhow',n:'سفينة'},{a:'turtle',n:'سلحفاة'},{a:'mosque',n:'مسجد'},{a:'khanjar',n:'خنجر'}],
- b:[{a:'fort',n:'قلعة نزوى',f:'من أشهر القلاع العُمانية: قلعة نزوى وقلعة بهلا وقلعة الرستاق.'},
-    {a:'dolphin',n:'دلفين',f:'تُشاهَد الدلافين كثيرًا في أخوار مسندم.'},
-    {a:'rose',n:'وردة',f:'يُصنع ماء الورد من ورد الجبل الأخضر.'},
-    {a:'khanjar',n:'الخنجر العُماني',f:'يُلبس في المناسبات، ويظهر في الشعار الوطني لسلطنة عُمان.'},
-    {a:'turtle',n:'سلحفاة',f:'تأتي السلاحف إلى شاطئ رأس الجنز لتضع بيضها.'},
-    {a:'dhow',n:'سفينة شراعية',f:'تشتهر مدينة صور بصناعة السفن الخشبية.'},
-    {a:'oryx',n:'المها العربي',f:'تعيش في محمية بمحافظة الوسطى.'},
-    {a:'coffee',n:'الدلّة',f:'تُصبّ منها القهوة العُمانية للضيف مع التمر أو الحلوى.'}]
+ s:[{a:'camel',n:['جمل','Camel']},{a:'palm',n:['نخلة','Palm tree']},{a:'dhow',n:['سفينة','Ship']},{a:'turtle',n:['سلحفاة','Turtle']},{a:'mosque',n:['مسجد','Mosque']},{a:'khanjar',n:['خنجر','Khanjar']}],
+ b:[{a:'fort',n:['قلعة نزوى','Nizwa Fort'],f:['من أشهر القلاع العُمانية: قلعة نزوى وقلعة بهلا وقلعة الرستاق.',"Among Oman's best-known forts: Nizwa, Bahla and Rustaq."]},
+    {a:'dolphin',n:['دلفين','Dolphin'],f:['تُشاهَد الدلافين كثيرًا في أخوار مسندم.','Dolphins are often seen in the khors of Musandam.']},
+    {a:'rose',n:['وردة','Rose'],f:['يُصنع ماء الورد من ورد الجبل الأخضر.','Rose water is made from the roses of Jebel Akhdar.']},
+    {a:'khanjar',n:['الخنجر العُماني','The Omani khanjar'],f:['يُلبس في المناسبات، ويظهر في الشعار الوطني لسلطنة عُمان.',"Worn on special occasions, and part of Oman's national emblem."]},
+    {a:'turtle',n:['سلحفاة','Turtle'],f:['تأتي السلاحف إلى شاطئ رأس الجنز لتضع بيضها.','Turtles come to the beach at Ras al Jinz to lay their eggs.']},
+    {a:'dhow',n:['سفينة شراعية','Sailing ship'],f:['تشتهر مدينة صور بصناعة السفن الخشبية.','Sur is famous for building wooden ships.']},
+    {a:'oryx',n:['المها العربي','Arabian oryx'],f:['تعيش في محمية بمحافظة الوسطى.','It lives in a reserve in Al Wusta.']},
+    {a:'coffee',n:['الدلّة','Dallah'],f:['تُصبّ منها القهوة العُمانية للضيف مع التمر أو الحلوى.','Omani coffee is poured from it for guests, with dates or halwa.']}]
 };
 const WHEEL={
- s:[{p:'camel',t:'امشوا مثل الجمل'},{p:'sea',t:'قلّدوا صوت أمواج البحر'},{p:'flags',t:'لوّحوا بأيديكم مثل العلم'},{p:'fireworks',t:'قولوا معًا: يوم وطني سعيد!'},
-    {p:'dolphin',t:'اقفزوا مثل الدلفين'},{p:'turtle',t:'امشوا ببطء مثل السلحفاة'},{p:'dhow',t:'جدّفوا مثل البحّار'},{p:'palm',t:'قفوا طوالًا مثل النخلة'}],
- b:[{p:'halwa',t:'اذكر ثلاث أكلات عُمانية',sec:10},{p:'map',t:'اذكر ثلاث محافظات عُمانية',sec:10},{p:'flags',t:'ارسم علم عُمان',sec:30},{p:'souq',t:'قل جملة باللهجة العُمانية كأنك بائع في سوق مطرح',sec:10},
-    {p:'razha',t:'أدِّ حركة من فنّ الرزحة',sec:15},{p:'salalah',t:'سؤال سريع: ما مركز محافظة ظفار؟ (صلالة)',sec:5},{p:'fireworks',t:'نقطتان مجانيتان لفريقك!'},{p:'fort',t:'اذكر قلعتين أو حصنين في عُمان',sec:10}]
+ s:[{p:'camel',t:['امشوا مثل الجمل','Walk like a camel']},{p:'sea',t:['قلّدوا صوت أمواج البحر','Make the sound of sea waves']},{p:'flags',t:['لوّحوا بأيديكم مثل العلم','Wave your hands like a flag']},{p:'fireworks',t:['قولوا معًا: يوم وطني سعيد!','Say together: Happy National Day!']},
+    {p:'dolphin',t:['اقفزوا مثل الدلفين','Jump like a dolphin']},{p:'turtle',t:['امشوا ببطء مثل السلحفاة','Walk slowly like a turtle']},{p:'dhow',t:['جدّفوا مثل البحّار','Row like a sailor']},{p:'palm',t:['قفوا طوالًا مثل النخلة','Stand tall like a palm tree']}],
+ b:[{p:'halwa',t:['اذكر ثلاث أكلات عُمانية','Name three Omani dishes'],sec:10},{p:'map',t:['اذكر ثلاث محافظات عُمانية','Name three Omani governorates'],sec:10},{p:'flags',t:['ارسم علم عُمان',"Draw Oman's flag"],sec:30},{p:'souq',t:['قل جملة باللهجة العُمانية كأنك بائع في سوق مطرح','Say a sentence in Omani dialect like a seller in Muttrah Souq'],sec:10},
+    {p:'razha',t:['أدِّ حركة من فنّ الرزحة','Perform a move from the Razha'],sec:15},{p:'salalah',t:['سؤال سريع: ما مركز محافظة ظفار؟ (صلالة)','Quick question: what is the centre of Dhofar? (Salalah)'],sec:5},{p:'fireworks',t:['نقطتان مجانيتان لفريقك!','Two free points for your team!']},{p:'fort',t:['اذكر قلعتين أو حصنين في عُمان','Name two forts or castles in Oman'],sec:10}]
 };
 const MEM={
  s:[['camel'],['palm'],['dhow']],
- b:[['camel','جمل'],['palm','نخلة'],['dhow','سفينة'],['turtle','سلحفاة'],['fort','قلعة'],['dolphin','دلفين']]
+ b:[['camel',['جمل','Camel']],['palm',['نخلة','Palm tree']],['dhow',['سفينة','Ship']],['turtle',['سلحفاة','Turtle']],['fort',['قلعة','Fort']],['dolphin',['دلفين','Dolphin']]]
 };
 const PLACES_S=[
- {p:'sea',n:'البحر',t:'فيه سلاحف وأسماك وسفن.',a:'اسبحوا مثل السمكة'},
- {p:'desert',n:'الصحراء',t:'رمال ذهبية وجمال كثيرة.',a:'امشوا مثل الجمل'},
- {p:'mountain',n:'الجبال',t:'عالية جدًا، وتعيش فيها الماعز.',a:'تسلّقوا الجبل في أماكنكم'},
- {p:'fort',n:'القلعة',t:'بيت قديم قوي له أبراج عالية.',a:'قفوا مثل حارس القلعة'},
- {p:'palmdates',n:'المزرعة',t:'فيها نخيل يعطينا التمر اللذيذ.',a:'اقطفوا التمر من النخلة'},
- {p:'souq',n:'السوق',t:'فيه حلوى وبخور وألعاب.',a:'نادوا مثل البائع: حلوى، حلوى!'}
+ {p:'sea',n:['البحر','The sea'],t:['فيه سلاحف وأسماك وسفن.','It has turtles, fish and ships.'],a:['اسبحوا مثل السمكة','Swim like a fish']},
+ {p:'desert',n:['الصحراء','The desert'],t:['رمال ذهبية وجمال كثيرة.','Golden sand and lots of camels.'],a:['امشوا مثل الجمل','Walk like a camel']},
+ {p:'mountain',n:['الجبال','The mountains'],t:['عالية جدًا، وتعيش فيها الماعز.','Very high, and goats live there.'],a:['تسلّقوا الجبل في أماكنكم','Climb the mountain where you stand']},
+ {p:'fort',n:['القلعة','The fort'],t:['بيت قديم قوي له أبراج عالية.','A strong old house with tall towers.'],a:['قفوا مثل حارس القلعة','Stand like a fort guard']},
+ {p:'palmdates',n:['المزرعة','The farm'],t:['فيها نخيل يعطينا التمر اللذيذ.','Palm trees that give us tasty dates.'],a:['اقطفوا التمر من النخلة','Pick dates from the palm']},
+ {p:'souq',n:['السوق','The souq'],t:['فيه حلوى وبخور وألعاب.','Halwa, incense and toys.'],a:['نادوا مثل البائع: حلوى، حلوى!','Call out like a seller: Halwa, halwa!']}
 ];
-const PLACES_B=[
- {p:'mosque',n:'مسقط',t:'العاصمة، وفيها جامع السلطان قابوس الأكبر وسوق مطرح القديم.'},
- {p:'salalah',n:'ظفار',t:'مركزها صلالة، وتشتهر بموسم الخريف وأشجار اللبان.'},
- {p:'musandam',n:'مسندم',t:'في أقصى الشمال، وتشتهر بالأخوار والدلافين.'},
- {p:'buraimi',n:'البريمي',t:'محافظة حدودية في الشمال الغربي، فيها حصن الخندق والقرى الطينية القديمة.'},
- {p:'fort',n:'الداخلية',t:'فيها قلعة نزوى وجبل شمس والجبل الأخضر بورده ورمّانه.'},
- {p:'sohar',n:'شمال الباطنة',t:'مركزها صحار، مدينة بحرية عريقة فيها حصن وميناء كبير.'},
- {p:'rustaq',n:'جنوب الباطنة',t:'فيها قلعة الرستاق وحصن نخل.'},
- {p:'wbk',n:'شمال الشرقية',t:'فيها جزء من رمال الشرقية ووادي بني خالد.'},
- {p:'dhowyard',n:'جنوب الشرقية',t:'مركزها صور مدينة السفن، وفيها محمية رأس الجنز للسلاحف.'},
- {p:'bat',n:'الظاهرة',t:'مركزها عبري، وفيها مدافن بات الأثرية.'},
- {p:'oryx',n:'الوسطى',t:'فيها محمية المها العربي وميناء الدقم.'}
+const GOV=[
+ {p:'mosque',n:['مسقط','Muscat'],c:['فيها العاصمة، وجامع السلطان قابوس الأكبر وسوق مطرح.','Home to the capital, the Sultan Qaboos Grand Mosque and Muttrah Souq.']},
+ {p:'salalah',n:['ظفار','Dhofar'],c:['يأتيها موسم الخريف، وتنمو فيها أشجار اللبان.','The khareef season arrives here, and frankincense trees grow here.']},
+ {p:'musandam',n:['مسندم','Musandam'],c:['في أقصى الشمال على مضيق هرمز، وتشتهر بالأخوار والدلافين.','In the far north on the Strait of Hormuz, famous for its khors and dolphins.']},
+ {p:'buraimi',n:['البريمي','Al Buraimi'],c:['محافظة حدودية في الشمال الغربي، فيها حصن الخندق.','A border governorate in the northwest, home to Al Khandaq Fort.']},
+ {p:'fort',n:['الداخلية','Ad Dakhiliyah'],c:['فيها قلعة نزوى وجبل شمس والجبل الأخضر.','Home to Nizwa Fort, Jebel Shams and Jebel Akhdar.']},
+ {p:'sohar',n:['شمال الباطنة','North Al Batinah'],c:['مركزها صحار، مدينة بحرية عريقة.','Its centre is Sohar, an ancient seafaring city.']},
+ {p:'rustaq',n:['جنوب الباطنة','South Al Batinah'],c:['فيها قلعة الرستاق وحصن نخل.','Home to Rustaq Fort and Nakhal Fort.']},
+ {p:'wbk',n:['شمال الشرقية','North Ash Sharqiyah'],c:['فيها وادي بني خالد وجزء من رمال الشرقية.','Home to Wadi Bani Khalid and part of the Sharqiyah Sands.']},
+ {p:'dhowyard',n:['جنوب الشرقية','South Ash Sharqiyah'],c:['مركزها صور مدينة السفن، وفيها محمية رأس الجنز.','Its centre is Sur, the city of ships, and it has the Ras al Jinz reserve.']},
+ {p:'bat',n:['الظاهرة','Ad Dhahirah'],c:['مركزها عبري، وفيها مدافن بات الأثرية.','Its centre is Ibri, and it has the ancient Bat tombs.']},
+ {p:'oryx',n:['الوسطى','Al Wusta'],c:['فيها محمية المها العربي وميناء الدقم.','Home to the Arabian oryx reserve and the port of Duqm.']}
 ];
 const MATCH={
  s:[['camel','palm','dhow','turtle'],['fort','dolphin','coffee','dates']],
- b:[[['halwa','الحلوى','حلوى عُمانية تُقدَّم مع القهوة'],['harees','الهريس','قمح مطبوخ مع اللحم حتى ينعم'],['massar','المصر','العمامة التي يلبسها الرجل العُماني'],['dishdasha','الدشداشة','الثوب الطويل للرجل العُماني'],['khanjar','الخنجر','يُلبس على الخصر في المناسبات'],['coffee','الدلّة','إبريق تُصبّ منه القهوة العُمانية']],
-    [['mosque','مسقط','العاصمة وجامع السلطان قابوس الأكبر'],['salalah','صلالة','الخريف وأشجار اللبان'],['dhowyard','صور','صناعة السفن الخشبية'],['fort','نزوى','القلعة ذات البرج الدائري الكبير'],['musandam','مسندم','الأخوار والدلافين'],['akhdar','الجبل الأخضر','الورد والرمّان']]]
+ b:[[['halwa',['الحلوى','Halwa'],['حلوى عُمانية تُقدَّم مع القهوة','Omani sweet served with coffee']],['harees',['الهريس','Harees'],['قمح مطبوخ مع اللحم حتى ينعم','Wheat cooked with meat until smooth']],['massar',['المصر','Massar'],['العمامة التي يلبسها الرجل العُماني','The turban worn by Omani men']],['dishdasha',['الدشداشة','Dishdasha'],['الثوب الطويل للرجل العُماني','The long robe worn by Omani men']],['khanjar',['الخنجر','Khanjar'],['يُلبس على الخصر في المناسبات','Worn at the waist on special occasions']],['coffee',['الدلّة','Dallah'],['إبريق تُصبّ منه القهوة العُمانية','A pot for pouring Omani coffee']]],
+    [['mosque',['مسقط','Muscat'],['العاصمة وجامع السلطان قابوس الأكبر','The capital and the Sultan Qaboos Grand Mosque']],['salalah',['صلالة','Salalah'],['الخريف وأشجار اللبان','The khareef and frankincense trees']],['dhowyard',['صور','Sur'],['صناعة السفن الخشبية','Building wooden ships']],['fort',['نزوى','Nizwa'],['القلعة ذات البرج الدائري الكبير','The fort with the big round tower']],['musandam',['مسندم','Musandam'],['الأخوار والدلافين','Khors and dolphins']],['akhdar',['الجبل الأخضر','Jebel Akhdar'],['الورد والرمّان','Roses and pomegranates']]]]
 };
 const STORY={
- s:{title:'سالم والسفينة الصغيرة',slides:[
-  {sc:['sea','dhow'],t:'في مدينة صور، يعيش ولد اسمه سالم. سالم يحب البحر كثيرًا.'},
-  {sc:['dhowyard'],t:'جدّ سالم يصنع سفينة من الخشب، وسالم يساعده. قولوا معي: <span class="say">طَق طَق طَق!</span>'},
-  {sc:['dhow','dolphin'],t:'أبحرت السفينة، فرأى سالم الدلافين تقفز. هيا نقفز مثل الدلافين!'},
-  {sc:['turtle'],t:'في الليل رأى سالم سلحفاة كبيرة تمشي على الشاطئ. قولوا: <span class="say">مرحبًا يا سلحفاة!</span>'},
-  {sc:['flags','fireworks'],t:'عاد سالم إلى البيت فوجد الجميع يحتفلون باليوم الوطني. هيا نقول معًا: <span class="say">يوم وطني سعيد!</span>'}
+ s:{title:['سالم والسفينة الصغيرة','Salem and the Little Ship'],slides:[
+  {sc:['sea','dhow'],t:['في مدينة صور، يعيش ولد اسمه سالم. سالم يحب البحر كثيرًا.','In the city of Sur lives a boy called Salem. Salem loves the sea very much.']},
+  {sc:['dhowyard'],t:['جدّ سالم يصنع سفينة من الخشب، وسالم يساعده. قولوا معي: <span class="say">طَق طَق طَق!</span>',"Salem's grandfather builds a ship from wood, and Salem helps him. Say with me: Tak tak tak!"]},
+  {sc:['dhow','dolphin'],t:['أبحرت السفينة، فرأى سالم الدلافين تقفز. هيا نقفز مثل الدلافين!',"The ship set sail, and Salem saw dolphins jumping. Let's jump like dolphins!"]},
+  {sc:['turtle'],t:['في الليل رأى سالم سلحفاة كبيرة تمشي على الشاطئ. قولوا: <span class="say">مرحبًا يا سلحفاة!</span>','At night Salem saw a big turtle walking on the beach. Say: Hello, turtle!']},
+  {sc:['flags','fireworks'],t:['عاد سالم إلى البيت فوجد الجميع يحتفلون باليوم الوطني. هيا نقول معًا: <span class="say">يوم وطني سعيد!</span>',"Salem came home to find everyone celebrating National Day. Let's all say: Happy National Day!"]}
  ]},
- b:{title:'رحلة مريم في عُمان',slides:[
-  {sc:['frank','salalah'],t:'مريم بنت من صلالة. قررت أن تسافر في عُمان قبل اليوم الوطني، وبدأت رحلتها من بين أشجار اللبان.',q:'في أي محافظة تقع صلالة؟',a:'محافظة ظفار'},
-  {sc:['desert','oryx'],t:'سافرت شمالًا عبر محافظة الوسطى، وزارت المحمية التي يعيش فيها حيوان نادر بقرنين طويلين.',q:'ما اسم هذا الحيوان؟',a:'المها العربي'},
-  {sc:['fort','rose'],t:'وصلت إلى نزوى وصعدت برج القلعة الكبير، ثم زارت الجبل الأخضر حيث الورد والرمّان.',q:'ماذا يُصنع من ورد الجبل الأخضر؟',a:'ماء الورد'},
-  {sc:['dhowyard','turtle'],t:'ذهبت إلى صور ورأت النجّارين يصنعون السفن الخشبية، وفي الليل شاهدت السلاحف في رأس الجنز.',q:'لماذا تأتي السلاحف إلى الشاطئ؟',a:'لتضع بيضها في الرمل'},
-  {sc:['mosque','souq'],t:'وصلت أخيرًا إلى مسقط، فزارت جامع السلطان قابوس الأكبر واشترت الحلوى من سوق مطرح.',q:'ما عاصمة سلطنة عُمان؟',a:'مسقط'},
-  {sc:['FLAG','fireworks'],t:'في اليوم الوطني رسمت مريم خريطة رحلتها وكتبت عليها: كل مكان في عُمان له حكاية!',q:'أي مكان من رحلة مريم تحب أن تزوره؟ ولماذا؟',a:'كل الإجابات صحيحة!'}
+ b:{title:['رحلة مريم في عُمان',"Maryam's Journey Across Oman"],slides:[
+  {sc:['frank','salalah'],t:['مريم بنت من صلالة. قررت أن تسافر في عُمان قبل اليوم الوطني، وبدأت رحلتها من بين أشجار اللبان.','Maryam is a girl from Salalah. Before National Day she set off across Oman, starting among the frankincense trees.'],q:['في أي محافظة تقع صلالة؟','Which governorate is Salalah in?'],a:['محافظة ظفار','Dhofar']},
+  {sc:['desert','oryx'],t:['سافرت شمالًا عبر محافظة الوسطى، وزارت المحمية التي يعيش فيها حيوان نادر بقرنين طويلين.','She travelled north through Al Wusta and visited the reserve where a rare animal with long horns lives.'],q:['ما اسم هذا الحيوان؟','What is this animal called?'],a:['المها العربي','The Arabian oryx']},
+  {sc:['fort','rose'],t:['وصلت إلى نزوى وصعدت برج القلعة الكبير، ثم زارت الجبل الأخضر حيث الورد والرمّان.',"She reached Nizwa and climbed the fort's great tower, then visited Jebel Akhdar with its roses and pomegranates."],q:['ماذا يُصنع من ورد الجبل الأخضر؟','What is made from the roses of Jebel Akhdar?'],a:['ماء الورد','Rose water']},
+  {sc:['dhowyard','turtle'],t:['ذهبت إلى صور ورأت النجّارين يصنعون السفن الخشبية، وفي الليل شاهدت السلاحف في رأس الجنز.','In Sur she watched carpenters building wooden ships, and at night she saw turtles at Ras al Jinz.'],q:['لماذا تأتي السلاحف إلى الشاطئ؟','Why do turtles come to the beach?'],a:['لتضع بيضها في الرمل','To lay their eggs in the sand']},
+  {sc:['mosque','souq'],t:['وصلت أخيرًا إلى مسقط، فزارت جامع السلطان قابوس الأكبر واشترت الحلوى من سوق مطرح.','Finally she reached Muscat, visited the Sultan Qaboos Grand Mosque and bought halwa in Muttrah Souq.'],q:['ما عاصمة سلطنة عُمان؟','What is the capital of Oman?'],a:['مسقط','Muscat']},
+  {sc:['FLAG','fireworks'],t:['في اليوم الوطني رسمت مريم خريطة رحلتها وكتبت عليها: كل مكان في عُمان له حكاية!','On National Day Maryam drew a map of her journey and wrote on it: Every place in Oman has a story!'],q:['أي مكان من رحلة مريم تحب أن تزوره؟ ولماذا؟',"Which place from Maryam's journey would you like to visit, and why?"],a:['كل الإجابات صحيحة!','Every answer is right!']}
  ]}
 };
 const DRAW={
  s:[
-  {o:{band:0,mid:0,green:0,outline:1},t:'ارسموا مستطيلًا كبيرًا على الورقة.',c:[]},
-  {o:{mid:0,green:0,emblem:0},t:'لوّنوا شريطًا أحمر عريضًا على جهة اليسار.',c:['#DF1A23']},
-  {o:{green:0,emblem:0},t:'لوّنوا خطًا أحمر في الوسط.',c:['#DF1A23']},
-  {o:{emblem:0},t:'لوّنوا الجزء السفلي بالأخضر، واتركوا الأعلى أبيض.',c:['#007E3C','#FFFFFF']},
-  {o:{},t:'هذا علم عُمان! والشعار الأبيض في الزاوية: خنجر وسيفان.',c:[],end:1}
+  {o:{band:0,mid:0,green:0,outline:1},t:['ارسموا مستطيلًا كبيرًا على الورقة.','Draw a big rectangle on your paper.'],c:[]},
+  {o:{mid:0,green:0,emblem:0},t:['لوّنوا شريطًا أحمر عريضًا على جهة اليسار.','Colour a wide red stripe on the left side.'],c:['#DF1A23']},
+  {o:{green:0,emblem:0},t:['لوّنوا خطًا أحمر في الوسط.','Colour a red stripe across the middle.'],c:['#DF1A23']},
+  {o:{emblem:0},t:['لوّنوا الجزء السفلي بالأخضر، واتركوا الأعلى أبيض.','Colour the bottom part green and leave the top white.'],c:['#007E3C','#FFFFFF']},
+  {o:{},t:['هذا علم عُمان! والشعار الأبيض في الزاوية: خنجر وسيفان.',"This is Oman's flag! The white emblem in the corner is a khanjar and two swords."],c:[],end:1}
  ],
  b:[
-  {o:{band:0,mid:0,green:0,outline:1},t:'ارسم مستطيلًا كبيرًا.',c:[]},
-  {o:{mid:0,green:0,emblem:0},t:'ارسم شريطًا أحمر عموديًا بجانب السارية (جهة اليسار) عرضه ثلث العلم.',c:['#DF1A23']},
-  {o:{mid:0,green:0,emblem:0},t:'قسّم الباقي إلى ثلاثة أشرطة أفقية متساوية، واترك العلوي أبيض.',c:['#FFFFFF']},
-  {o:{green:0,emblem:0},t:'لوّن الشريط الأوسط بالأحمر.',c:['#DF1A23']},
-  {o:{emblem:0},t:'لوّن الشريط السفلي بالأخضر.',c:['#007E3C']},
-  {o:{},t:'ارسم الشعار الوطني بالأبيض أعلى الشريط الأحمر: خنجر في غمده فوق سيفين متقاطعين.',c:['#FFFFFF'],end:1,f:'يُقال إن الأبيض يرمز للسلام، والأحمر للدفاع عن الوطن، والأخضر للخير والخصب.'}
+  {o:{band:0,mid:0,green:0,outline:1},t:['ارسم مستطيلًا كبيرًا.','Draw a large rectangle.'],c:[]},
+  {o:{mid:0,green:0,emblem:0},t:['ارسم شريطًا أحمر عموديًا بجانب السارية (جهة اليسار) عرضه ثلث العلم.',"Draw a vertical red stripe by the flagpole (left side), one third of the flag's width."],c:['#DF1A23']},
+  {o:{mid:0,green:0,emblem:0},t:['قسّم الباقي إلى ثلاثة أشرطة أفقية متساوية، واترك العلوي أبيض.','Divide the rest into three equal horizontal stripes and leave the top one white.'],c:['#FFFFFF']},
+  {o:{green:0,emblem:0},t:['لوّن الشريط الأوسط بالأحمر.','Colour the middle stripe red.'],c:['#DF1A23']},
+  {o:{emblem:0},t:['لوّن الشريط السفلي بالأخضر.','Colour the bottom stripe green.'],c:['#007E3C']},
+  {o:{},t:['ارسم الشعار الوطني بالأبيض أعلى الشريط الأحمر: خنجر في غمده فوق سيفين متقاطعين.','Draw the national emblem in white at the top of the red stripe: a sheathed khanjar over two crossed swords.'],c:['#FFFFFF'],end:1,f:['يُقال إن الأبيض يرمز للسلام، والأحمر للدفاع عن الوطن، والأخضر للخير والخصب.','White is said to stand for peace, red for defending the nation, and green for prosperity and fertility.']}
  ]
 };
 const TF={
  s:[
-  {t:'الجمل يعيش في البحر',p:'camel',y:0},{t:'في علم عُمان لون أحمر',p:'FLAG',y:1},{t:'النخلة تعطينا التمر',p:'palmdates',y:1},
-  {t:'السلحفاة تطير في السماء',p:'turtle',y:0},{t:'السفينة تمشي على الماء',p:'dhow',y:1},{t:'القلعة مصنوعة من الحلوى',p:'fort',y:0},{t:'نحن نحتفل باليوم الوطني لسلطنة عُمان',p:'fireworks',y:1}
+  {t:['الجمل يعيش في البحر','The camel lives in the sea'],p:'camel',y:0},{t:['في علم عُمان لون أحمر',"Oman's flag has red in it"],p:'FLAG',y:1},{t:['النخلة تعطينا التمر','The palm tree gives us dates'],p:'palmdates',y:1},
+  {t:['السلحفاة تطير في السماء','The turtle flies in the sky'],p:'turtle',y:0},{t:['السفينة تمشي على الماء','The ship moves on water'],p:'dhow',y:1},{t:['القلعة مصنوعة من الحلوى','The fort is made of sweets'],p:'fort',y:0},{t:['نحن نحتفل باليوم الوطني لسلطنة عُمان',"We are celebrating Oman's National Day"],p:'fireworks',y:1}
  ],
  b:[
-  {t:'مسقط هي عاصمة سلطنة عُمان',p:'muscat',y:1},{t:'جبل شمس هو أعلى جبل في عُمان',p:'mountain',y:1},{t:'صلالة تقع في محافظة مسندم',p:'salalah',y:0,x:'صلالة في محافظة ظفار.'},
-  {t:'عدد محافظات سلطنة عُمان ١١ محافظة',p:'map',y:1},{t:'عملة عُمان هي الدينار',p:'rial',y:0,x:'عملة عُمان هي الريال العُماني.'},{t:'مدينة صور تشتهر بصناعة السفن',p:'dhowyard',y:1},
-  {t:'رأس الجنز مشهور بالدلافين',p:'turtle',y:0,x:'رأس الجنز مشهور بالسلاحف، والدلافين تشتهر بها مسندم.'},{t:'اللبان يُستخرج من أشجار تنمو في ظفار',p:'frank',y:1},{t:'المصر حزام يُلبس على الخصر',p:'massar',y:0,x:'المصر هو العمامة، والذي يُلبس على الخصر هو الخنجر.'}
+  {t:['مسقط هي عاصمة سلطنة عُمان','Muscat is the capital of Oman'],p:'muscat',y:1},{t:['جبل شمس هو أعلى جبل في عُمان','Jebel Shams is the highest mountain in Oman'],p:'mountain',y:1},{t:['صلالة تقع في محافظة مسندم','Salalah is in Musandam Governorate'],p:'salalah',y:0,x:['صلالة في محافظة ظفار.','Salalah is in Dhofar.']},
+  {t:['عدد محافظات سلطنة عُمان ١١ محافظة','Oman has 11 governorates'],p:'map',y:1},{t:['عملة عُمان هي الدينار',"Oman's currency is the dinar"],p:'rial',y:0,x:['عملة عُمان هي الريال العُماني.',"Oman's currency is the Omani rial."]},{t:['مدينة صور تشتهر بصناعة السفن','Sur is famous for building ships'],p:'dhowyard',y:1},
+  {t:['رأس الجنز مشهور بالدلافين','Ras al Jinz is famous for dolphins'],p:'turtle',y:0,x:['رأس الجنز مشهور بالسلاحف، والدلافين تشتهر بها مسندم.','Ras al Jinz is famous for turtles; Musandam is known for dolphins.']},{t:['اللبان يُستخرج من أشجار تنمو في ظفار','Frankincense comes from trees that grow in Dhofar'],p:'frank',y:1},{t:['المصر حزام يُلبس على الخصر','The massar is a belt worn at the waist'],p:'massar',y:0,x:['المصر هو العمامة، والذي يُلبس على الخصر هو الخنجر.','The massar is the turban; the khanjar is worn at the waist.']}
  ]
 };
 
 /* ---------- activities ---------- */
 const ACTS=[
- {id:'quiz',p:'mosque',title:'مسابقة عُمان',d:{s:'صورتان، اختاروا الصحيحة',b:'أسئلة بأربعة خيارات ومؤقّت'},run:runQuiz},
- {id:'zoom',p:'khanjar',title:'خمّن الصورة',d:{s:'صورة مكبّرة، ماذا ترون؟',b:'صورة مكبّرة ومشوّشة تتضح تدريجيًا'},run:runZoom},
- {id:'wheel',p:'razha',title:'عجلة التحديات',d:{s:'حركات وأصوات مضحكة',b:'تحديات معلومات وحركة بمؤقّت'},run:runWheel},
- {id:'memory',p:'camel',title:'لعبة الذاكرة',d:{s:'٦ بطاقات مرقّمة، ابحثوا عن الصورتين المتشابهتين',b:'١٢ بطاقة مرقّمة، طابقوا الصورة مع اسمها'},run:runMemory},
- {id:'tour',p:'musandam',title:{s:'جولة في عُمان',b:'محافظات عُمان'},d:{s:'البحر والصحراء والجبال وغيرها',b:'١١ محافظة ومعلومة عن كل واحدة'},run:runTour},
- {id:'match',p:'halwa',title:'صِل الصحيح',d:{s:'صِل الصورة بجزء منها',b:'صِل الاسم بوصفه'},run:runMatch},
- {id:'story',p:'dhow',title:{s:'قصة: سالم والسفينة',b:'قصة: رحلة مريم'},d:{s:'قصة قصيرة يردّد فيها الأطفال',b:'قصة مع سؤال في كل صفحة'},run:runStory},
- {id:'draw',p:'FLAG',title:'ارسم العلم معي',d:{s:'٥ خطوات تلوين سهلة',b:'٦ خطوات مع الشعار الوطني'},run:runDraw},
- {id:'tf',p:'fort',title:'قف أو اجلس',d:{s:'صح: قف، خطأ: اجلس',b:'معلومات صح أو خطأ مع التصحيح'},run:runTF},
- {id:'finale',p:'fireworks',title:'الختام والفائز',d:{s:'عدّ تنازلي وإعلان الفريق الفائز',b:'عدّ تنازلي وإعلان الفريق الفائز'},run:runFinale,fin:1}
+ {id:'quiz',p:'mosque',title:['مسابقة عُمان','Oman Quiz'],d:{s:['صورتان، اختاروا الصحيحة','Two pictures: pick the right one'],b:['أسئلة بأربعة خيارات ومؤقّت','Four-choice questions with a timer']},run:b=>runQuiz(b,S.age==='s'?{list:QUIZ_S,young:1}:{list:shuffle(QUIZ_B)})},
+ {id:'zoom',p:'khanjar',title:['خمّن الصورة','Guess the Picture'],d:{s:['صورة مكبّرة، ماذا ترون؟','A zoomed-in picture: what do you see?'],b:['صورة مكبّرة ومشوّشة تتضح تدريجيًا','A zoomed, blurred picture that slowly clears']},run:runZoom},
+ {id:'wheel',p:'razha',title:['عجلة التحديات','Challenge Wheel'],d:{s:['حركات وأصوات مضحكة','Funny moves and sounds'],b:['تحديات معلومات وحركة بمؤقّت','Knowledge and movement challenges with a timer']},run:runWheel},
+ {id:'memory',p:'camel',title:['لعبة الذاكرة','Memory Game'],d:{s:['٦ بطاقات مرقّمة، ابحثوا عن الصورتين المتشابهتين','6 numbered cards: find the matching pairs'],b:['١٢ بطاقة مرقّمة، طابقوا الصورة مع اسمها','12 numbered cards: match each picture with its name']},run:runMemory},
+ {id:'tour',p:'musandam',title:{s:['جولة في عُمان','A Trip Around Oman'],b:['خمّن المحافظة','Guess the Governorate']},d:{s:['البحر والصحراء والجبال وغيرها','The sea, the desert, the mountains and more'],b:['صورة ومعلومة، فأي محافظة هي؟','A picture and a clue: which governorate is it?']},run:b=>S.age==='s'?runTour(b):runQuiz(b,{list:shuffle(GOV).map(govQ),gov:1})},
+ {id:'match',p:'halwa',title:['صِل الصحيح','Match It'],d:{s:['صِل الصورة بجزء منها','Match each picture with a piece of it'],b:['صِل الاسم بوصفه','Match each name with its description']},run:runMatch},
+ {id:'story',p:'dhow',title:{s:['قصة: سالم والسفينة','Story: Salem and the Ship'],b:['قصة: رحلة مريم',"Story: Maryam's Journey"]},d:{s:['قصة قصيرة يردّد فيها الأطفال','A short story with lines to repeat'],b:['قصة مع سؤال في كل صفحة','A story with a question on every page']},run:runStory},
+ {id:'draw',p:'FLAG',title:['ارسم العلم معي','Draw the Flag with Me'],d:{s:['٥ خطوات تلوين سهلة','5 easy colouring steps'],b:['٦ خطوات مع الشعار الوطني','6 steps including the national emblem']},run:runDraw},
+ {id:'tf',p:'fort',title:['قف أو اجلس','Stand or Sit'],d:{s:['صح: قف، خطأ: اجلس','True: stand. False: sit.'],b:['معلومات صح أو خطأ مع التصحيح','True-or-false facts with corrections']},run:runTF},
+ {id:'finale',p:'fireworks',title:['الختام والفائز','The Final & the Winner'],d:{s:['عدّ تنازلي وإعلان الفريق الفائز','Countdown and winner announcement'],b:['عدّ تنازلي وإعلان الفريق الفائز','Countdown and winner announcement']},run:runFinale,fin:1}
 ];
-const T=x=>typeof x==='string'?x:x[S.age];
-const ageName=a=>a==='s'?'حتى ٦ سنوات':'٧ سنوات فأكثر';
+function govQ(g){const others=shuffle(GOV.filter(x=>x!==g)).slice(0,3).map(x=>x.n);return{p:g.p,q:g.c,c:[g.n,...others]}}
+const T=x=>Array.isArray(x)?x:x[S.age];
+const AGE={s:['حتى ٦ سنوات','Up to 6 years'],b:['٧ سنوات فأكثر','7 years and up']};
 
 /* ---------- screens ---------- */
 const main=$('#main');
 function showHome(){
   clearAll();S.age=null;$('#ageChip').hidden=true;
-  main.innerHTML=`<section class="hero">${flag()}<h1>نحتفل بـ<span>اليوم الوطني</span> لسلطنة عُمان</h1><p>اختاروا الفئة العمرية لتبدأ الألعاب</p></section>
+  main.innerHTML=`<section class="hero">${flag()}<h1>نحتفل بـ<span>اليوم الوطني</span> لسلطنة عُمان${en("Celebrating Oman's National Day")}</h1><p>${bi(['اختاروا الفئة العمرية لتبدأ الألعاب','Choose an age group to start the games'])}</p></section>
   <div class="ages">
-   <button class="age s" data-a="s">${ph('camel')}<b>الصغار</b><small>حتى ٦ سنوات</small></button>
-   <button class="age b" data-a="b">${ph('fort')}<b>الكبار</b><small>٧ سنوات فأكثر</small></button>
+   <button class="age s" data-a="s">${ph('camel')}<b>${bi(['الصغار','Little ones'])}</b><small>${bi(AGE.s)}</small></button>
+   <button class="age b" data-a="b">${ph('fort')}<b>${bi(['الكبار','Older kids'])}</b><small>${bi(AGE.b)}</small></button>
   </div>`;
   $$('.age',main).forEach(b=>b.onclick=()=>{S.age=b.dataset.a;sfx.pop();showMenu()});
 }
 function showMenu(){
   clearAll();
-  const chip=$('#ageChip');chip.hidden=false;chip.textContent=ageName(S.age)+' · تغيير';
-  main.innerHTML=`<div class="menu-head"><div><h2>فقرات ${S.age==='s'?'الصغار':'الكبار'}</h2><p>${ageName(S.age)} · اختاروا فقرة لعرضها على الشاشة</p></div></div>
-  <div class="tiles">${ACTS.map(a=>`<button class="tile${a.fin?' fin':''}" data-id="${a.id}"><span class="thumb">${art(a.p)}</span><b>${T(a.title)}</b><span class="d">${a.d[S.age]}</span></button>`).join('')}</div>
-  <p class="tip">اقتراح: ٥–١٠ دقائق لكل فقرة، وبدّلوا بين فقرة على الشاشة وفقرة حركية. استخدموا أزرار + في الأعلى لنقاط الفريقين.<br><button class="linkbtn" id="cred">حقوق الصور</button></p>`;
+  const chip=$('#ageChip');chip.hidden=false;chip.innerHTML=bil(AGE[S.age][0],S.age==='s'?'Ages 0–6':'Ages 7+');
+  main.innerHTML=`<div class="menu-head"><div><h2>${bi(S.age==='s'?['فقرات الصغار','Activities for little ones']:['فقرات الكبار','Activities for older kids'])}</h2><p>${bi([AGE[S.age][0]+' · اختاروا فقرة لعرضها على الشاشة',AGE[S.age][1]+' · Choose an activity to show on screen'])}</p></div></div>
+  <div class="tiles">${ACTS.map(a=>`<button class="tile${a.fin?' fin':''}" data-id="${a.id}"><span class="thumb">${art(a.p)}</span><b>${bi(T(a.title))}</b><span class="d">${bi(a.d[S.age])}</span></button>`).join('')}</div>
+  <p class="tip">${bi(['اقتراح: ٥–١٠ دقائق لكل فقرة، وبدّلوا بين فقرة على الشاشة وفقرة حركية. استخدموا أزرار + في الأعلى لنقاط الفريقين.','Tip: 5–10 minutes per activity; alternate screen activities with movement. Use the + buttons at the top to score the two teams.'])}<br><button class="linkbtn" id="cred">${bil('حقوق الصور','Photo credits')}</button></p>`;
   $$('.tile',main).forEach(b=>b.onclick=()=>openAct(b.dataset.id));
   $('#cred',main).onclick=showCredits;
 }
 function showCredits(){
-  const items=Object.entries(META).map(([k,m])=>`<li><bdi>${m.t}</bdi> — ${m.a} — ${m.l} — <a href="${m.p}" target="_blank" rel="noopener">المصدر</a></li>`).join('');
-  const m=h(`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><h3 style="font-size:32px">حقوق الصور</h3><p style="font-size:17px;max-width:none">الصور من ويكيميديا كومنز، ومستخدمة وفق رخصها. علم سلطنة عُمان وشعارها من ملف Flag of Oman.svg على ويكيميديا كومنز (ملك عام).</p><ol class="credits">${items}</ol><button class="btn" id="cl">إغلاق</button></div></div>`);
+  const items=Object.entries(META).map(([k,m])=>`<li><bdi>${m.t}</bdi> — ${m.a} — ${m.l} — <a href="${m.p}" target="_blank" rel="noopener">${bil('المصدر','Source')}</a></li>`).join('');
+  const m=h(`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><h3 style="font-size:32px">${bi(['حقوق الصور','Photo credits'])}</h3><p style="font-size:17px;max-width:none">${bi(['الصور من ويكيميديا كومنز، ومستخدمة وفق رخصها. علم سلطنة عُمان وشعارها من ملف Flag of Oman.svg على ويكيميديا كومنز (ملك عام).','Photos are from Wikimedia Commons and used under their licences. The flag and emblem of Oman come from Flag of Oman.svg on Wikimedia Commons (public domain).'])}</p><ol class="credits">${items}</ol><button class="btn" id="cl">${bil('إغلاق','Close')}</button></div></div>`);
   document.body.append(m);const close=()=>{m.remove();S.key=null};$('#cl',m).onclick=close;m.onclick=e=>{if(e.target===m)close()};S.key=e=>{if(e.key==='Escape')close()};
 }
 function openAct(id){
   clearAll();const A=ACTS.find(a=>a.id===id);sfx.pop();
-  main.innerHTML=`<section class="act"><div class="act-top"><button class="btn ghost" id="back">→ القائمة</button><h2>${T(A.title)}</h2><span class="act-age ${S.age}">${ageName(S.age)}</span></div><div class="stage" id="body"></div></section>`;
+  main.innerHTML=`<section class="act"><div class="act-top"><button class="btn ghost" id="back">${W.menu}</button><h2>${bi(T(A.title))}</h2><span class="act-age ${S.age}">${bil(...AGE[S.age])}</span></div><div class="stage" id="body"></div></section>`;
   $('#back').onclick=()=>{sfx.pop();showMenu()};
   A.run($('#body'));
   scrollTo({top:0});
 }
-const endScreen=(body,msg,again)=>{body.innerHTML=`<div class="big-msg">${msg}</div><div class="row"><button class="btn big" id="again">من جديد</button><button class="btn ghost big" id="m">القائمة</button></div>`;sfx.tada();confetti();$('#again',body).onclick=again;$('#m',body).onclick=showMenu};
+const endScreen=(body,msg,again)=>{body.innerHTML=`<div class="big-msg">${bi(msg)}</div><div class="row"><button class="btn big" id="again">${W.again}</button><button class="btn ghost big" id="m">${W.menu}</button></div>`;sfx.tada();confetti();$('#again',body).onclick=again;$('#m',body).onclick=showMenu};
+const prog=(i,n,a='سؤال',e='Question')=>bil(`${a} ${ar(i)} من ${ar(n)}`,`${e} ${i} of ${n}`);
 
-/* quiz */
-function runQuiz(body){
-  const young=S.age==='s';const Q=young?QUIZ_S:shuffle(QUIZ_B);let i=0;
+/* quiz (also used for Guess the Governorate) */
+function runQuiz(body,cfg){
+  const young=!!cfg.young,Q=cfg.list;let i=0;
   const render=()=>{
     clearAll();
-    if(i>=Q.length)return endScreen(body,'انتهت المسابقة! 🏆',()=>{i=0;render()});
+    if(i>=Q.length)return endScreen(body,['انتهت المسابقة! 🏆','The quiz is over!'],()=>{i=0;render()});
     const q=Q[i];
     const opts=shuffle(q.c.map((c,k)=>({c,ok:k===0})));
-    body.innerHTML=`<div class="prog">سؤال ${ar(i+1)} من ${ar(Q.length)}</div>
+    body.innerHTML=`<div class="prog">${prog(i+1,Q.length)}</div>
+     ${cfg.gov?`<div class="eyebrow">${bil('خمّن المحافظة','Guess the governorate')}</div>`:''}
      ${q.p?(q.p==='FLAG'?`<div class="qphoto flagbox">${flag()}</div>`:`<img class="ph qphoto" src="img/${q.p}.jpg" alt="">`):''}
-     <div class="q-text">${q.q}</div>
+     <div class="q-text${cfg.gov?' clue':''}">${bi(q.q)}</div>
      ${young?'':'<div class="tbar"><i id="tb"></i></div><div class="count" id="sec" style="font-size:clamp(28px,3vw,48px)"></div>'}
      <div class="choices ${young?'pics':'four'}">${opts.map((o,k)=>young
-        ?`<button class="choice" data-k="${k}"><span class="pic">${art(o.c.p,o.c.t)}</span><span class="lbl">${o.c.t}</span></button>`
-        :`<button class="choice" data-k="${k}"><span class="key">${'أبجد'[k]}</span><span>${o.c}</span></button>`).join('')}</div>
+        ?`<button class="choice" data-k="${k}"><span class="pic">${art(o.c.p,o.c.t[1])}</span><span class="lbl">${bi(o.c.t)}</span></button>`
+        :`<button class="choice" data-k="${k}"><span class="key">${'أبجد'[k]}</span><span>${bi(o.c)}</span></button>`).join('')}</div>
      <div id="fact"></div>
-     <div class="row"><button class="btn big" id="nx" hidden>${i+1<Q.length?'السؤال التالي ←':'النتيجة ←'}</button></div>`;
+     <div class="row"><button class="btn big" id="nx" hidden>${i+1<Q.length?W.next:bil('النتيجة ←','Result')}</button></div>`;
     const btns=$$('.choice',body);
     const finish=(k)=>{
       clearAll();
       btns.forEach((b,j)=>{b.disabled=true;b.classList.add('show');if(opts[j].ok)b.classList.add('right');else if(j===k)b.classList.add('wrong');else b.classList.add('dim')});
       if(k!=null&&opts[k].ok){sfx.ok();confetti(70)}else sfx.no();
-      if(q.f)$('#fact',body).innerHTML=`<div class="fact">💡 ${q.f}</div>`;
+      if(q.f)$('#fact',body).innerHTML=`<div class="fact">💡 ${bi(q.f)}</div>`;
       $('#nx',body).hidden=false;$('#nx',body).focus();
     };
     btns.forEach((b,k)=>b.onclick=()=>finish(k));
     $('#nx',body).onclick=()=>{i++;render()};
     if(!young){
-      let left=20;const tb=$('#tb',body),sec=$('#sec',body);sec.textContent=ar(left);
-      every(()=>{left--;sec.textContent=ar(Math.max(left,0));tb.style.transform=`scaleX(${Math.max(left,0)/20})`;if(left<=5&&left>0)sfx.tick();if(left<=0){sec.textContent='انتهى الوقت!';finish(null)}},1000);
+      const total=cfg.gov?30:20;let left=total;const tb=$('#tb',body),sec=$('#sec',body);sec.textContent=ar(left);
+      every(()=>{left--;sec.textContent=ar(Math.max(left,0));tb.style.transform=`scaleX(${Math.max(left,0)/total})`;if(left<=5&&left>0)sfx.tick();if(left<=0){sec.innerHTML=bi(W.timeUp);finish(null)}},1000);
     }
   };
   render();
@@ -540,17 +579,17 @@ function runZoom(body){
   const levels=young?[{s:3.4,b:4},{s:2,b:1.5},{s:1,b:0}]:[{s:6,b:12},{s:3.8,b:7},{s:2.2,b:3},{s:1,b:0}];
   const render=()=>{
     clearAll();
-    if(i>=items.length)return endScreen(body,'أحسنتم! 🎉',()=>{i=0;render()});
+    if(i>=items.length)return endScreen(body,W.well,()=>{i=0;render()});
     const it=items[i];let lv=0;const ox=30+Math.random()*40,oy=30+Math.random()*40;
-    body.innerHTML=`<div class="prog">صورة ${ar(i+1)} من ${ar(items.length)} · ماذا ترون؟</div>
+    body.innerHTML=`<div class="prog">${bil(`صورة ${ar(i+1)} من ${ar(items.length)} · ماذا ترون؟`,`Picture ${i+1} of ${items.length} · What do you see?`)}</div>
      <div class="zstage"><div class="zin" id="zin">${ph(it.a)}</div></div>
      <div id="ans"></div>
-     <div class="row"><button class="btn red big" id="more">أظهروا أكثر 🔍</button><button class="btn big" id="reveal">الإجابة</button><button class="btn ghost big" id="nx" hidden>التالي ←</button></div>`;
+     <div class="row"><button class="btn red big" id="more">${W.more}</button><button class="btn big" id="reveal">${W.answer}</button><button class="btn ghost big" id="nx" hidden>${W.next}</button></div>`;
     const zin=$('#zin',body);
     const apply=()=>{const L=levels[lv];zin.style.transformOrigin=`${ox}% ${oy}%`;zin.style.transform=`scale(${L.s})`;zin.style.filter=`blur(${L.b}px)`};
     apply();
     const show=()=>{lv=levels.length-1;apply();$('#more',body).hidden=true;$('#reveal',body).hidden=true;$('#nx',body).hidden=false;
-      $('#ans',body).innerHTML=`<div class="answer">${it.n}</div>${it.f?`<div class="fact">💡 ${it.f}</div>`:''}`;sfx.ok();confetti(60)};
+      $('#ans',body).innerHTML=`<div class="answer">${bi(it.n)}</div>${it.f?`<div class="fact">💡 ${bi(it.f)}</div>`:''}`;sfx.ok();confetti(60)};
     $('#more',body).onclick=()=>{sfx.pop();if(lv<levels.length-2){lv++;apply()}else show()};
     $('#reveal',body).onclick=show;
     $('#nx',body).onclick=()=>{i++;render()};
@@ -570,20 +609,20 @@ function runWheel(body){
     <image href="img/${s.p}.jpg" x="${tx-44}" y="${ty-44}" width="88" height="88" preserveAspectRatio="xMidYMid slice" clip-path="url(#wc${k})" transform="rotate(${a0+seg/2} ${tx} ${ty})"/>
     <circle cx="${tx}" cy="${ty}" r="44" fill="none" stroke="#FFFFFF" stroke-width="4"/>`});
   body.innerHTML=`<div class="wheel-area">
-    <div class="wheel-wrap"><div class="pointer"></div><svg viewBox="0 0 400 400" id="wh" role="img" aria-label="عجلة التحديات"><defs>${defs}</defs><circle cx="200" cy="200" r="198" fill="#2B1B14"/>${paths}</svg><button class="hub" id="hub">لِف!</button></div>
-    <div class="result" id="res"><h3>اضغطوا «لِف!» لتدور العجلة</h3><button class="btn red big" id="spin">لِف العجلة</button></div>
+    <div class="wheel-wrap"><div class="pointer"></div><svg viewBox="0 0 400 400" id="wh" role="img" aria-label="عجلة التحديات / Challenge wheel"><defs>${defs}</defs><circle cx="200" cy="200" r="198" fill="#2B1B14"/>${paths}</svg><button class="hub" id="hub">${bi(['لِف!','Spin!'])}</button></div>
+    <div class="result" id="res"><h3>${bi(['اضغطوا «لِف!» لتدور العجلة','Press "Spin!" to turn the wheel'])}</h3><button class="btn red big" id="spin">${bil('لِف العجلة','Spin the wheel')}</button></div>
    </div>`;
   const wh=$('#wh',body),res=$('#res',body);
   const spin=()=>{
     if(spinning)return;spinning=true;clearAll();
     rot+=360*6+Math.random()*360;wh.style.transform=`rotate(${rot}deg)`;
-    res.innerHTML=`<h3>تدور… تدور…</h3>`;
+    res.innerHTML=`<h3>${bi(['تدور… تدور…','Spinning…'])}</h3>`;
     [0,150,300,450,620,800,1000,1250,1550,1900,2300,2800,3400,4000].forEach(t=>later(sfx.tick,t));
     later(()=>{
       spinning=false;const a=(360-(rot%360))%360;const s=segs[Math.floor(a/seg)%n];sfx.ok();confetti(60);
-      res.innerHTML=`${ph(s.p)}<h3>${s.t}</h3>${s.sec?`<div class="count" id="cnt">${ar(s.sec)}</div><button class="btn" id="go">ابدأ المؤقّت (${ar(s.sec)} ث)</button>`:''}<button class="btn red" id="spin2">لِف مرة أخرى</button>`;
+      res.innerHTML=`${ph(s.p)}<h3>${bi(s.t)}</h3>${s.sec?`<div class="count" id="cnt">${ar(s.sec)}</div><button class="btn" id="go">${bil(`ابدأ المؤقّت (${ar(s.sec)} ث)`,`Start timer (${s.sec}s)`)}</button>`:''}<button class="btn red" id="spin2">${bil('لِف مرة أخرى','Spin again')}</button>`;
       $('#spin2',res).onclick=spin;
-      if(s.sec)$('#go',res).onclick=e=>{e.target.disabled=true;let l=s.sec;const c=$('#cnt',res);every(()=>{l--;c.textContent=l>0?ar(l):'انتهى الوقت!';if(l>0&&l<=3)sfx.tick();if(l===0){sfx.no();clearAll()}},1000)};
+      if(s.sec)$('#go',res).onclick=e=>{e.currentTarget.disabled=true;let l=s.sec;const c=$('#cnt',res);every(()=>{l--;if(l>0)c.textContent=ar(l);else c.innerHTML=bi(W.timeUp);if(l>0&&l<=3)sfx.tick();if(l===0){sfx.no();clearAll()}},1000)};
     },4700);
   };
   $('#hub',body).onclick=spin;$('#spin',body).onclick=spin;
@@ -596,9 +635,10 @@ function runMemory(body){
     clearAll();
     let cards=young?MEM.s.flatMap(([p],k)=>[{k,p},{k,p}]):MEM.b.flatMap(([p,w],k)=>[{k,p},{k,w}]);
     cards=shuffle(cards);let open=[],tries=0,done=0,lock=false;const total=cards.length/2;
-    body.innerHTML=`<div class="prog" id="mst">قولوا رقمين لنقلب بطاقتيهما · المحاولات: ٠ · الأزواج: ٠ من ${ar(total)}</div>
-     <div class="mem" style="grid-template-columns:repeat(${young?3:4},minmax(0,1fr));max-width:${young?'min(100%,92vh)':'min(100%,118vh)'};--ar:${young?'1':'4/3'}">
-     ${cards.map((c,j)=>`<button class="mcard" data-j="${j}" aria-label="البطاقة ${j+1}"><div class="in"><div class="b">${ar(j+1)}</div><div class="f${c.w?' word':''}">${c.w?c.w:ph(c.p)}</div></div></button>`).join('')}</div>
+    const stat=()=>bil(`المحاولات: ${ar(tries)} · الأزواج: ${ar(done)} من ${ar(total)}`,`Tries: ${tries} · Pairs: ${done} of ${total}`);
+    body.innerHTML=`<div class="prog">${bi(['قولوا رقمين لنقلب بطاقتيهما','Call out two numbers to flip those cards'])}</div><div class="prog" id="mst">${stat()}</div>
+     <div class="mem" style="grid-template-columns:repeat(${young?3:4},minmax(0,1fr));max-width:${young?'min(100%,88vh)':'min(100%,112vh)'};--ar:${young?'1':'4/3'}">
+     ${cards.map((c,j)=>`<button class="mcard" data-j="${j}" aria-label="البطاقة ${j+1} / Card ${j+1}"><div class="in"><div class="b">${ar(j+1)}<span class="bnum" lang="en">${j+1}</span></div><div class="f${c.w?' word':''}">${c.w?bi(c.w):ph(c.p)}</div></div></button>`).join('')}</div>
      <div id="win"></div>`;
     const els=$$('.mcard',body),st=$('#mst',body);
     els.forEach((el,j)=>el.onclick=()=>{
@@ -606,23 +646,23 @@ function runMemory(body){
       el.classList.add('open');sfx.pop();open.push(j);
       if(open.length===2){tries++;const[a,b]=open;
         if(cards[a].k===cards[b].k){done++;later(()=>{els[a].classList.add('done');els[b].classList.add('done');sfx.ok()},350);open=[];
-          if(done===total)later(()=>{confetti();sfx.tada();$('#win',body).innerHTML=`<div class="big-msg">أحسنتم! 🎉</div><div class="row"><button class="btn" id="again">العبوا من جديد</button><button class="btn ghost" id="m">القائمة</button></div>`;$('#again',body).onclick=render;$('#m',body).onclick=showMenu},700)}
+          if(done===total)later(()=>{confetti();sfx.tada();$('#win',body).innerHTML=`<div class="big-msg">${bi(W.well)}</div><div class="row"><button class="btn" id="again">${W.again}</button><button class="btn ghost" id="m">${W.menu}</button></div>`;$('#again',body).onclick=render;$('#m',body).onclick=showMenu},700)}
         else{lock=true;later(()=>{els[a].classList.remove('open');els[b].classList.remove('open');open=[];lock=false},1300)}
-        st.textContent=`المحاولات: ${ar(tries)} · الأزواج: ${ar(done)} من ${ar(total)}`;
+        st.innerHTML=stat();
       }
     });
   };
   render();
 }
 
-/* tour */
+/* trip around Oman (little ones) */
 function runTour(body){
-  const young=S.age==='s';const P=young?PLACES_S:PLACES_B;
-  body.innerHTML=`<div class="prog">${young?'اضغطوا على مكان لنزوره معًا':'اضغطوا على محافظة لتعرفوا عنها معلومة'}</div>
-   <div class="places">${P.map((p,k)=>`<button class="place" data-k="${k}">${ph(p.p,p.n)}${p.n}</button>`).join('')}</div>`;
+  const P=PLACES_S;
+  body.innerHTML=`<div class="prog">${bi(['اضغطوا على مكان لنزوره معًا','Tap a place to visit it together'])}</div>
+   <div class="places">${P.map((p,k)=>`<button class="place" data-k="${k}">${ph(p.p,p.n[1])}<span>${bi(p.n)}</span></button>`).join('')}</div>`;
   $$('.place',body).forEach(b=>b.onclick=()=>{
     const p=P[b.dataset.k];b.classList.add('seen');sfx.pop();
-    const m=h(`<div class="modal" role="dialog" aria-modal="true"><div class="mbox">${ph(p.p,p.n)}<h3>${p.n}</h3><p>${p.t}</p>${p.a?`<div class="act-line">هيا: ${p.a}!</div>`:''}<button class="btn big" id="cl">رجوع</button></div></div>`);
+    const m=h(`<div class="modal" role="dialog" aria-modal="true"><div class="mbox">${ph(p.p,p.n[1])}<h3>${bi(p.n)}</h3><p>${bi(p.t)}</p><div class="act-line">${bi(['هيا: '+p.a[0]+'!',"Let's go: "+p.a[1]+'!'])}</div><button class="btn big" id="cl">${W.close}</button></div></div>`);
     document.body.append(m);$('#cl',m).focus();
     const close=()=>{m.remove();S.key=null};
     $('#cl',m).onclick=close;m.onclick=e=>{if(e.target===m)close()};S.key=e=>{if(e.key==='Escape')close()};
@@ -636,9 +676,10 @@ function runMatch(body){
     clearAll();const set=sets[si%sets.length];let sel=null,done=0;
     const left=shuffle(set.map((p,k)=>({k,p}))),right=shuffle(set.map((p,k)=>({k,p})));
     const crop=()=>`${10+Math.random()*80}% ${10+Math.random()*80}%`;
-    body.innerHTML=`<div class="prog">${young?'اختاروا صورة، ثم اضغطوا على الجزء المأخوذ منها':'اختاروا اسمًا، ثم اضغطوا على الوصف المناسب'} · الجولة ${ar(si%sets.length+1)} من ${ar(sets.length)}</div>
-     <div class="match${young?' young':''}"><div class="mcol">${left.map(o=>young?`<button class="mi" data-side="a" data-k="${o.k}">${ph(o.p)}</button>`:`<button class="mi" data-side="a" data-k="${o.k}">${ph(o.p[0])}<span>${o.p[1]}</span></button>`).join('')}</div>
-     <div class="mcol">${right.map(o=>young?`<button class="mi" data-side="b" data-k="${o.k}" aria-label="جزء من صورة"><span class="crop" style="background-image:url(img/${o.p}.jpg);background-position:${crop()}"></span></button>`:`<button class="mi desc" data-side="b" data-k="${o.k}">${o.p[2]}</button>`).join('')}</div></div>
+    const r=si%sets.length+1;
+    body.innerHTML=`<div class="prog">${bi(young?['اختاروا صورة، ثم اضغطوا على الجزء المأخوذ منها','Pick a picture, then tap the piece that comes from it']:['اختاروا اسمًا، ثم اضغطوا على الوصف المناسب','Pick a name, then tap the matching description'])}${bil(`الجولة ${ar(r)} من ${ar(sets.length)}`,`Round ${r} of ${sets.length}`)}</div>
+     <div class="match${young?' young':''}"><div class="mcol">${left.map(o=>young?`<button class="mi" data-side="a" data-k="${o.k}">${ph(o.p)}</button>`:`<button class="mi" data-side="a" data-k="${o.k}">${ph(o.p[0])}<span>${bi(o.p[1])}</span></button>`).join('')}</div>
+     <div class="mcol">${right.map(o=>young?`<button class="mi" data-side="b" data-k="${o.k}" aria-label="جزء من صورة / Piece of a picture"><span class="crop" style="background-image:url(img/${o.p}.jpg);background-position:${crop()}"></span></button>`:`<button class="mi desc" data-side="b" data-k="${o.k}"><span>${bi(o.p[2])}</span></button>`).join('')}</div></div>
      <div id="win"></div>`;
     $$('.mi',body).forEach(b=>b.onclick=()=>{
       if(b.classList.contains('done'))return;
@@ -647,7 +688,7 @@ function runMatch(body){
       if(sel.dataset.k===b.dataset.k){sel.classList.remove('sel');sel.classList.add('done');b.classList.add('done');
         if(young){const cr=$('.crop',b);cr.style.backgroundSize='cover';cr.style.backgroundPosition='center'}
         sel=null;done++;sfx.ok();
-        if(done===set.length)later(()=>{confetti();sfx.tada();$('#win',body).innerHTML=`<div class="big-msg">ممتاز! 🎉</div><div class="row"><button class="btn" id="nxt">الجولة التالية ←</button><button class="btn ghost" id="m">القائمة</button></div>`;$('#nxt',body).onclick=()=>{si++;render()};$('#m',body).onclick=showMenu},400)}
+        if(done===set.length)later(()=>{confetti();sfx.tada();$('#win',body).innerHTML=`<div class="big-msg">${bi(W.great)}</div><div class="row"><button class="btn" id="nxt">${bil('الجولة التالية ←','Next round')}</button><button class="btn ghost" id="m">${W.menu}</button></div>`;$('#nxt',body).onclick=()=>{si++;render()};$('#m',body).onclick=showMenu},400)}
       else{sfx.no();[sel,b].forEach(x=>{x.classList.add('bad');later(()=>x.classList.remove('bad'),500)})}
     });
   };
@@ -659,14 +700,14 @@ function runStory(body){
   const st=STORY[S.age];let i=0;
   const render=()=>{
     const s=st.slides[i];
-    body.innerHTML=`<div class="story"><div class="prog">${st.title}</div>
+    body.innerHTML=`<div class="story"><div class="prog">${bi(st.title)}</div>
       <div class="scene">${s.sc.map(k=>box(k)).join('')}</div>
-      <p class="stext">${s.t}</p>
-      ${s.q?`<div class="sq"><b>❓ ${s.q}</b><button class="btn ghost" id="sa">أظهروا الإجابة</button><div class="answer" id="aa" hidden style="font-size:clamp(26px,3vw,48px)">${s.a}</div></div>`:''}
-      <div class="row"><button class="btn ghost big" id="pv" ${i===0?'disabled':''}>→ السابق</button>
+      <p class="stext">${bi(s.t)}</p>
+      ${s.q?`<div class="sq"><b>❓ ${bi(s.q)}</b><button class="btn ghost" id="sa">${W.showAns}</button><div class="answer" id="aa" hidden style="font-size:clamp(26px,3vw,48px)">${bi(s.a)}</div></div>`:''}
+      <div class="row"><button class="btn ghost big" id="pv" ${i===0?'disabled':''}>${W.prev}</button>
       <div class="dots">${st.slides.map((_,k)=>`<i class="${k===i?'on':''}"></i>`).join('')}</div>
-      <button class="btn big" id="nx">${i<st.slides.length-1?'التالي ←':'النهاية 🎉'}</button></div></div>`;
-    if(s.q)$('#sa',body).onclick=e=>{$('#aa',body).hidden=false;e.target.hidden=true;sfx.ok()};
+      <button class="btn big" id="nx">${i<st.slides.length-1?W.next:bil('النهاية 🎉','The end')}</button></div></div>`;
+    if(s.q)$('#sa',body).onclick=e=>{$('#aa',body).hidden=false;e.currentTarget.hidden=true;sfx.ok()};
     const go=d=>{if(d>0&&i===st.slides.length-1){confetti();sfx.tada();return}const n=i+d;if(n<0||n>=st.slides.length)return;i=n;sfx.pop();render()};
     $('#pv',body).onclick=()=>go(-1);$('#nx',body).onclick=()=>go(1);
     S.key=e=>{if(e.key==='ArrowLeft'||e.key===' ')go(1);if(e.key==='ArrowRight')go(-1)};
@@ -680,10 +721,10 @@ function runDraw(body){
   const render=()=>{
     const s=steps[i];
     body.innerHTML=`<div class="draw"><div>${flag(s.o)}</div>
-      <div class="steptxt"><div class="stepn">الخطوة ${ar(i+1)} من ${ar(steps.length)}</div><p>${s.t}</p>
+      <div class="steptxt"><div class="stepn">${prog(i+1,steps.length,'الخطوة','Step')}</div><p>${bi(s.t)}</p>
       ${s.c.length?`<div class="colors">${s.c.map(c=>`<i style="background:${c}"></i>`).join('')}</div>`:''}
-      ${s.f?`<div class="fact">💡 ${s.f}</div>`:''}
-      <div class="row" style="justify-content:start"><button class="btn ghost" id="pv" ${i===0?'disabled':''}>→ السابق</button><button class="btn big" id="nx">${s.end?'من جديد':'التالي ←'}</button></div></div></div>`;
+      ${s.f?`<div class="fact">💡 ${bi(s.f)}</div>`:''}
+      <div class="row" style="justify-content:start"><button class="btn ghost" id="pv" ${i===0?'disabled':''}>${W.prev}</button><button class="btn big" id="nx">${s.end?W.again:W.next}</button></div></div></div>`;
     if(s.end){confetti();sfx.tada()}
     const go=d=>{i=s.end&&d>0?0:Math.max(0,Math.min(steps.length-1,i+d));sfx.pop();render()};
     $('#pv',body).onclick=()=>go(-1);$('#nx',body).onclick=()=>go(1);
@@ -696,16 +737,16 @@ function runDraw(body){
 function runTF(body){
   const young=S.age==='s';const L=young?TF.s:shuffle(TF.b);let i=0;
   const render=()=>{
-    if(i>=L.length)return endScreen(body,'أحسنتم! 🎉',()=>{i=0;render()});
+    if(i>=L.length)return endScreen(body,W.well,()=>{i=0;render()});
     const s=L[i];
-    body.innerHTML=`<div class="tf-legend"><span class="y">✋ صح = قِف</span><span class="n">🪑 خطأ = اجلس</span></div>
-      <div class="prog">${ar(i+1)} من ${ar(L.length)}</div>
+    body.innerHTML=`<div class="tf-legend"><span class="y">${bil('✋ صح = قِف','True = stand')}</span><span class="n">${bil('🪑 خطأ = اجلس','False = sit')}</span></div>
+      <div class="prog">${bil(`${ar(i+1)} من ${ar(L.length)}`,`${i+1} of ${L.length}`)}</div>
       ${s.p?(s.p==='FLAG'?`<div class="qphoto flagbox">${flag()}</div>`:`<img class="ph qphoto" src="img/${s.p}.jpg" alt="">`):''}
-      <div class="statement">${s.t}</div>
+      <div class="statement">${bi(s.t)}</div>
       <div id="v"></div>
-      <div class="row"><button class="btn red big" id="rv">اكشف الإجابة</button><button class="btn big" id="nx" hidden>التالي ←</button></div>`;
-    $('#rv',body).onclick=e=>{e.target.hidden=true;$('#nx',body).hidden=false;
-      $('#v',body).innerHTML=`<div class="verdict ${s.y?'y':'n'}">${s.y?'✓ صح! الواقفون فازوا':'✗ خطأ! الجالسون فازوا'}</div>${s.x?`<div class="fact">💡 ${s.x}</div>`:''}`;sfx.ok();if(young)confetti(50)};
+      <div class="row"><button class="btn red big" id="rv">${bil('اكشف الإجابة','Reveal')}</button><button class="btn big" id="nx" hidden>${W.next}</button></div>`;
+    $('#rv',body).onclick=e=>{e.currentTarget.hidden=true;$('#nx',body).hidden=false;
+      $('#v',body).innerHTML=`<div class="verdict ${s.y?'y':'n'}">${bi(s.y?['✓ صح! الواقفون فازوا','True! Those standing win']:['✗ خطأ! الجالسون فازوا','False! Those sitting win'])}</div>${s.x?`<div class="fact">💡 ${bi(s.x)}</div>`:''}`;sfx.ok();if(young)confetti(50)};
     $('#nx',body).onclick=()=>{i++;render()};
   };
   render();
@@ -715,21 +756,21 @@ function runTF(body){
 function runFinale(body){
   const render=()=>{
     body.innerHTML=`<div class="board">
-      <div class="bteam r" id="br"><b>الفريق الأحمر</b><div class="n" id="nr">${ar(S.scores.r)}</div><div class="row"><button data-t="r" data-d="-1" aria-label="ناقص">−</button><button data-t="r" data-d="1" aria-label="زائد">+</button></div></div>
-      <div class="bteam g" id="bg"><b>الفريق الأخضر</b><div class="n" id="ng">${ar(S.scores.g)}</div><div class="row"><button data-t="g" data-d="-1" aria-label="ناقص">−</button><button data-t="g" data-d="1" aria-label="زائد">+</button></div></div>
+      <div class="bteam r" id="br"><b>${bi(['الفريق الأحمر','Red team'])}</b><div class="n" id="nr">${ar(S.scores.r)}</div><div class="row"><button data-t="r" data-d="-1" aria-label="ناقص / minus">−</button><button data-t="r" data-d="1" aria-label="زائد / plus">+</button></div></div>
+      <div class="bteam g" id="bg"><b>${bi(['الفريق الأخضر','Green team'])}</b><div class="n" id="ng">${ar(S.scores.g)}</div><div class="row"><button data-t="g" data-d="-1" aria-label="ناقص / minus">−</button><button data-t="g" data-d="1" aria-label="زائد / plus">+</button></div></div>
      </div>
      <div id="out"></div>
-     <div class="row"><button class="btn red big" id="cd">أعلنوا الفائز!</button><button class="btn ghost" id="rs">تصفير النقاط</button></div>`;
+     <div class="row"><button class="btn red big" id="cd">${bil('أعلنوا الفائز!','Announce the winner!')}</button><button class="btn ghost" id="rs">${bil('تصفير النقاط','Reset scores')}</button></div>`;
     $$('.board button',body).forEach(b=>b.onclick=()=>bump(b.dataset.t,+b.dataset.d));
     $('#rs',body).onclick=()=>{S.scores={r:0,g:0};saveScores();render()};
     $('#cd',body).onclick=e=>{
-      e.target.disabled=true;const out=$('#out',body);let n=5;out.innerHTML=`<div class="cd">${ar(n)}</div>`;sfx.tick();
+      const btn=e.currentTarget;btn.disabled=true;const out=$('#out',body);let n=5;out.innerHTML=`<div class="cd">${ar(n)}</div>`;sfx.tick();
       every(()=>{n--;if(n>0){out.innerHTML=`<div class="cd">${ar(n)}</div>`;sfx.tick();return}
         clearAll();const{r,g}=S.scores;
-        const msg=r===g?'تعادل! كلكم أبطال 🤝':(r>g?'الفريق الأحمر هو الفائز! 🏆':'الفريق الأخضر هو الفائز! 🏆');
+        const msg=r===g?['تعادل! كلكم أبطال 🤝',"It's a tie! You're all champions"]:(r>g?['الفريق الأحمر هو الفائز! 🏆','The red team wins!']:['الفريق الأخضر هو الفائز! 🏆','The green team wins!']);
         if(r>g)$('#br',body).classList.add('win');if(g>r)$('#bg',body).classList.add('win');
-        out.innerHTML=`<div class="big-msg" style="color:${r===g?'var(--ink)':r>g?'var(--red)':'var(--green)'}">${msg}</div><div class="hero" style="margin:0">${flag()}<h1>يوم وطني <span>سعيد</span></h1></div>`;
-        sfx.tada();confetti(220);later(()=>confetti(160),900);e.target.disabled=false;
+        out.innerHTML=`<div class="big-msg" style="color:${r===g?'var(--ink)':r>g?'var(--red)':'var(--green)'}">${bi(msg)}</div><div class="hero" style="margin:0">${flag()}<h1>يوم وطني <span>سعيد</span>${en('Happy National Day')}</h1></div>`;
+        sfx.tada();confetti(220);later(()=>confetti(160),900);btn.disabled=false;
       },1000);
     };
   };
@@ -749,6 +790,7 @@ addEventListener('keydown',e=>{if(S.key)S.key(e)});
 addEventListener('resize',()=>{cv.width=innerWidth;cv.height=innerHeight});
 saveScores();showHome();
 </script>
+
 
 </body>
 </html>
